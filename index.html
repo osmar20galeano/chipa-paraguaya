@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chipa paraguaya | Tradición, tipos y receta</title>
+  <meta name="description" content="Página educativa sobre la chipa paraguaya: qué es, tipos, preparación paso a paso y orientación para su venta.">
+  <style>
+    :root {
+      --crema: #fff8ec;
+      --dorado: #e0a43a;
+      --marron: #7a4a1e;
+      --marron-osc: #4a2c10;
+      --rojo: #d52b1e;
+      --azul: #0038a8;
+      --texto: #2b2118;
+      --borde: #ecd9b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    .franja {
+      height: 8px;
+      background: linear-gradient(to right, var(--rojo) 33.3%, #fff 33.3% 66.6%, var(--azul) 66.6%);
+    }
+    header {
+      background: linear-gradient(135deg, var(--dorado), var(--marron));
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 2.5rem;
+    }
+    header .emoji { font-size: 3rem; }
+    header h1 { font-size: clamp(2rem, 6vw, 3.2rem); margin: .3rem 0; }
+    header p { font-size: clamp(1rem, 2.5vw, 1.2rem); opacity: .95; max-width: 640px; margin: 0 auto; }
+    nav {
+      background: var(--marron-osc);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .25rem;
+      padding: .5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      display: block;
+    }
+    nav a:hover, nav a:focus { background: var(--dorado); color: var(--marron-osc); }
+    main { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    section {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 14px rgba(122, 74, 30, .07);
+      scroll-margin-top: 70px;
+    }
+    h2 {
+      color: var(--marron);
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      margin-bottom: .8rem;
+      border-bottom: 3px solid var(--dorado);
+      display: inline-block;
+      padding-bottom: .2rem;
+    }
+    h3 { color: var(--marron-osc); margin: .4rem 0; }
+    p + p { margin-top: .7rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .tarjeta {
+      background: var(--crema);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 1.1rem;
+    }
+    .tarjeta .icono { font-size: 2rem; }
+    .ingredientes {
+      columns: 2 220px;
+      padding-left: 1.2rem;
+      margin: .6rem 0 1rem;
+    }
+    .pasos { counter-reset: paso; list-style: none; }
+    .pasos li {
+      counter-increment: paso;
+      position: relative;
+      padding: .7rem 0 .7rem 3.2rem;
+      border-bottom: 1px dashed var(--borde);
+    }
+    .pasos li:last-child { border-bottom: none; }
+    .pasos li::before {
+      content: counter(paso);
+      position: absolute;
+      left: 0;
+      top: .6rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--dorado);
+      color: var(--marron-osc);
+      font-weight: bold;
+      display: grid;
+      place-items: center;
+    }
+    .tabla-wrap { overflow-x: auto; margin: 1rem 0; }
+    table { width: 100%; border-collapse: collapse; min-width: 420px; }
+    th, td { padding: .6rem .8rem; border-bottom: 1px solid var(--borde); text-align: left; }
+    th { background: var(--marron); color: #fff; }
+    tr:nth-child(even) td { background: var(--crema); }
+    .nota { font-size: .9rem; color: #6b5a48; font-style: italic; }
+    .aviso {
+      background: #fff3cd;
+      border: 2px solid var(--dorado);
+      border-left: 8px solid var(--dorado);
+    }
+    .aviso h2 { border-bottom-color: var(--marron); }
+    .fuentes ul { padding-left: 1.2rem; }
+    .fuentes li { margin: .5rem 0; }
+    .fuentes a { color: var(--azul); word-break: break-word; }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: var(--marron-osc);
+      color: #f3e3c7;
+      font-size: .9rem;
+    }
+    @media (max-width: 600px) {
+      section { padding: 1.1rem; }
+      nav a { font-size: .85rem; padding: .35rem .6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="franja"></div>
+  <header>
+    <div class="emoji" aria-hidden="true">🥯🧀</div>
+    <h1>Chipa paraguaya</h1>
+    <p>Un pan de almidón de mandioca y queso que forma parte de la identidad, la mesa y las calles del Paraguay.</p>
+  </header>
+
+  <nav aria-label="Secciones">
+    <ul>
+      <li><a href="#que-es">Qué es</a></li>
+      <li><a href="#tipos">Tipos</a></li>
+      <li><a href="#preparacion">Preparación</a></li>
+      <li><a href="#venta">Venta</a></li>
+      <li><a href="#aviso">Aviso</a></li>
+      <li><a href="#fuentes">Fuentes</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="que-es">
+      <h2>¿Qué es la chipa?</h2>
+      <p>La <strong>chipa</strong> es un panificado tradicional del Paraguay (también muy popular en el noreste argentino) elaborado principalmente con <strong>almidón de mandioca</strong>, <strong>queso</strong>, huevo, grasa o manteca, leche y, en muchas recetas, <strong>anís</strong>. Su origen se vincula con la cocina guaraní y la época de las misiones jesuíticas, cuando se combinaron ingredientes nativos como la mandioca con productos traídos por los europeos, como el queso y el huevo.</p>
+      <p>Es habitual comprarla a vendedores ambulantes en rutas, terminales y colectivos, y ocupa un lugar especial durante la <strong>Semana Santa</strong>, cuando muchas familias la preparan en casa y la hornean en el tradicional horno de barro llamado <em>tatakua</em>.</p>
+    </section>
+
+    <section id="tipos">
+      <h2>Tipos de chipa</h2>
+      <div class="grid">
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">⭕</div>
+          <h3>Chipa argolla</h3>
+          <p>La más conocida: tiene forma de anillo o rosca. Por fuera es firme y algo dorada, y por dentro más tierna. Es la típica de los vendedores ambulantes.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🤍</div>
+          <h3>Chipa almidón</h3>
+          <p>Hecha con almidón de mandioca como base. Suele tener una textura más liviana y crocante, y se presenta en bollitos o formas alargadas.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🌽</div>
+          <h3>Chipa mestiza</h3>
+          <p>Combina almidón de mandioca con harina de maíz. Esa mezcla le da un sabor y un color diferentes, con una textura algo más densa.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🥘</div>
+          <h3>Chipa guasu</h3>
+          <p>"Guasu" significa "grande" en guaraní. Se prepara con choclo (maíz fresco) rallado, queso, huevos y leche; se hornea en fuente y resulta una especie de pastel húmedo y esponjoso.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="preparacion">
+      <h2>Preparación paso a paso (chipa argolla casera)</h2>
+      <h3>Ingredientes orientativos</h3>
+      <ul class="ingredientes">
+        <li>1 kg de almidón de mandioca</li>
+        <li>500 g de queso Paraguay (o queso fresco semiduro) rallado</li>
+        <li>200 g de grasa de cerdo o manteca</li>
+        <li>4 huevos</li>
+        <li>1 cucharadita de anís en grano</li>
+        <li>Sal a gusto</li>
+        <li>Leche, cantidad necesaria (aprox. 1 taza)</li>
+      </ul>
+      <ol class="pasos">
+        <li><strong>Infusionar el anís:</strong> calentá un poco de la leche con el anís unos minutos y dejá entibiar.</li>
+        <li><strong>Batir la grasa:</strong> en un bol grande, batí la grasa o manteca hasta que quede cremosa y agregá los huevos de a uno.</li>
+        <li><strong>Sumar el queso:</strong> incorporá el queso rallado y la sal, mezclando bien.</li>
+        <li><strong>Agregar el almidón:</strong> añadí el almidón de mandioca de a poco, integrando con las manos.</li>
+        <li><strong>Hidratar:</strong> volcá la leche con anís en forma gradual hasta lograr una masa suave, que no se pegue en las manos.</li>
+        <li><strong>Amasar:</strong> trabajá la masa unos minutos hasta que quede lisa y homogénea.</li>
+        <li><strong>Formar:</strong> hacé cilindros de unos 15 cm y uní las puntas para formar argollas. Colocalas en una bandeja enmantecada.</li>
+        <li><strong>Hornear:</strong> en horno precalentado a unos 200 °C, entre 20 y 25 minutos, hasta que estén doradas.</li>
+        <li><strong>Servir:</strong> se disfrutan tibias, ideales con cocido, mate o café con leche.</li>
+      </ol>
+      <p class="nota">Las cantidades y tiempos son orientativos: cada familia tiene su receta y cada horno se comporta distinto.</p>
+    </section>
+
+    <section id="venta">
+      <h2>Venta orientativa</h2>
+      <p>La chipa es un producto clásico para emprendimientos pequeños: ferias escolares, kermeses, pedidos para oficinas o venta casera. Algunas ideas para organizarse:</p>
+      <div class="grid">
+        <div class="tarjeta">
+          <h3>🧮 Calcular costos</h3>
+          <p>Sumá el costo de todos los ingredientes, el gas o la leña, el empaque y tu tiempo. Dividí ese total por la cantidad de chipas que rinde la receta.</p>
+        </div>
+        <div class="tarjeta">
+          <h3>🏷️ Fijar el precio</h3>
+          <p>Al costo por unidad agregale un margen de ganancia y compará con los precios de tu zona para mantenerte competitivo.</p>
+        </div>
+        <div class="tarjeta">
+          <h3>📦 Presentación</h3>
+          <p>Bolsitas de papel, docenas o medias docenas, y una etiqueta simple con el nombre del emprendimiento ayudan a vender más.</p>
+        </div>
+        <div class="tarjeta">
+          <h3>🧼 Higiene</h3>
+          <p>Manos limpias, cabello recogido, ingredientes frescos y producto protegido del polvo y los insectos.</p>
+        </div>
+      </div>
+      <h3 style="margin-top:1.2rem;">Ejemplo de cálculo (valores ficticios)</h3>
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr><th>Concepto</th><th>Valor de ejemplo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Costo total de una tanda</td><td>60.000 Gs.</td></tr>
+            <tr><td>Chipas obtenidas</td><td>40 unidades</td></tr>
+            <tr><td>Costo por unidad</td><td>1.500 Gs.</td></tr>
+            <tr><td>Margen sugerido (ej. 60 %)</td><td>+ 900 Gs.</td></tr>
+            <tr><td>Precio de venta posible</td><td>≈ 2.400 Gs. por unidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">Los números de la tabla son solo un ejemplo para explicar el cálculo; no representan precios reales de mercado. Consultá los precios actuales en tu zona.</p>
+    </section>
+
+    <section id="aviso" class="aviso">
+      <h2>⚠️ Aviso educativo</h2>
+      <p>Esta página fue creada con fines <strong>educativos</strong> para una exposición escolar. La información es general y las recetas, cantidades y valores de venta son <strong>orientativos</strong>. Si vas a vender alimentos, informate sobre los requisitos sanitarios y comerciales vigentes en tu localidad. Si tenés alergias o intolerancias (lácteos, huevo, etc.), revisá cada ingrediente antes de consumir.</p>
+    </section>
+
+    <section id="fuentes" class="fuentes">
+      <h2>Fuentes</h2>
+      <ul>
+        <li>Wikipedia — Chipa: <a href="https://es.wikipedia.org/wiki/Chipa" target="_blank" rel="noopener noreferrer">https://es.wikipedia.org/wiki/Chipa</a></li>
+        <li>196 flavors — Chipa argolla (Paraguay): <a href="https://www.196flavors.com/es/paraguay-chipa-argolla/" target="_blank" rel="noopener noreferrer">https://www.196flavors.com/es/paraguay-chipa-argolla/</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con cariño para una exposición escolar · Chipa paraguaya 🇵🇾</p>
+  </footer>
+</body>
+</html>
